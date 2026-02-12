@@ -7,7 +7,7 @@ mainMenu.addOption("View network connection")
 mainMenu.addOption("Display free ram and swap")
 mainMenu.addOption("Quit")
 
-userInput = mainMenu.getInput()
+mainMenu.getInput()
 
 
 #userInput = Menu.getInput()
