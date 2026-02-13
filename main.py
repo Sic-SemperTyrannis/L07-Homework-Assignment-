@@ -1,5 +1,8 @@
 from menu import Menu
+import menu
 import os
+
+
 mainMenu = Menu()
 
 mainMenu.addOption("Check available memory")
@@ -10,4 +13,4 @@ mainMenu.addOption("Quit")
 mainMenu.getInput()
 
 
-#userInput = Menu.getInput()
+
