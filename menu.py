@@ -27,7 +27,7 @@ def run_bash_cmd(some_choice):
         os.system('free -tmh')
     elif (some_choice == 2):
         print('The current network connections include: ')
-        os.system('netstat -an | grep -i Estab | cut -d \':\' -f 2,3 | gawk\'{print $2}\' | grep [0-9] | uniq')
+        os.system('netstat -an | grep -i Estab | cut -d \':\' -f 2,3 | gawk \'{print $2}\' | grep [0-9] | uniq')
     elif (some_choice == 3):
         print('Available file space is: ')
         os.system('df -h | grep \"Filesystem\|root\"')        
