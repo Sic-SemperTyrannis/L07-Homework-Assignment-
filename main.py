@@ -1,7 +1,4 @@
 from menu import Menu
-import menu
-import os
-
 
 mainMenu = Menu()
 

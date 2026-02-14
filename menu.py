@@ -1,4 +1,5 @@
 import os
+
 class Menu():
     def __init__(self):
         self.options = []
@@ -18,17 +19,24 @@ class Menu():
                 run_bash_cmd(int(userInput))
             elif userInput == 'Q' or userInput == '4':
                 exit()
+            else:
+                print("Invaild input")
 
-def run_bash_cmd(some_choice):
-    print('-' * 80, '\n')
-    print('You entered #', some_choice)
-    if (some_choice == 1):
-        print('The available memory is ')
-        os.system('free -tmh')
-    elif (some_choice == 2):
-        print('The current network connections include: ')
-        os.system('netstat -an | grep -i Estab | cut -d \':\' -f 2,3 | gawk \'{print $2}\' | grep [0-9] | uniq')
-    elif (some_choice == 3):
-        print('Available file space is: ')
-        os.system('df -h | grep \"Filesystem\|root\"')        
-    return    
+def run_bash_cmd(choice):
+    print('-' * 80)
+    print('You entered #', choice)
+
+    commands = {
+        1: 'free -tmh',
+        2: r"netstat -an | grep -i Estab | cut -d ':' -f 2,3 | gawk '{print $2}' | grep [0-9] | uniq",
+        3: r'df -h | grep "Filesystem\|root"'
+    }
+
+    messages = {
+        1: 'The available memory is:',
+        2: 'The current network connections include:',
+        3: 'Available file space is:'
+    }
+
+    print(messages[choice])
+    os.system(commands[choice])
